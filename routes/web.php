@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function(){
     Route::prefix('items')->name('items.')->group(function(){
         Route::prefix('one')->name('one.')->group(function(){
             Route::get('/', [App\Http\Controllers\ItemsController::class, 'show'])->name('show');
-            Route::post('/', [App\Http\Controllers\ItemsController::class, 'find'])->name('find');
+            Route::get('/{id}', [App\Http\Controllers\ItemsController::class, 'find'])->name('find');
         });
     });
 });

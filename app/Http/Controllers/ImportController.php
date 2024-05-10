@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Item;
+use App\Models\Order;
 
 class ImportController extends Controller
 {
@@ -45,20 +46,24 @@ class ImportController extends Controller
                 }
             }
 
-            // dd($data);
+            if(!Item::find($data[0])){
+                Item::create([
+                    'id' => $data[0],
+                    'name' => $data[1],
+                    'producer' => $data[2],
+                    'unit' => $data[3],
+                    'weight' => $data[4],
+                    'radius' => $data[5],
+                    'length' => $data[6],
+                    'width' => $data[7],
+                    'depth' => $data[8],
+                    'size' => $data[9],
+                    'type' => $data[10],
+                ]);
+            }
 
-            Item::create([
+            Order::create([
                 'item_id' => $data[0],
-                'name' => $data[1],
-                'producer' => $data[2],
-                'unit' => $data[3],
-                'weight' => $data[4],
-                'radius' => $data[5],
-                'length' => $data[6],
-                'width' => $data[7],
-                'depth' => $data[8],
-                'size' => $data[9],
-                'type' => $data[10],
                 'quantity' => $data[11],
                 'quantity_unit' => $data[12],
             ]);

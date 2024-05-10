@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->integer('item_id');
             $table->string('name');
             $table->string('producer');
             $table->string('unit');
@@ -24,8 +23,6 @@ return new class extends Migration
             $table->decimal('depth', 16, 8)->nullable();
             $table->decimal('size', 16, 8)->nullable();
             $table->string('type')->nullable();
-            $table->integer('quantity')->nullable();
-            $table->string('quantity_unit')->nullable(); 
         });
     }
 

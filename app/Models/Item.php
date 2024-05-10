@@ -11,5 +11,5 @@ class Item extends Model
 
     public $timestamps = false;
 
-    public $fillable = ["item_id", "name", "producer", "unit", "weight", "radius", "length", "width", "depth", "size", "type", "quantity", "quantity_unit"];
+    public $fillable = ["id", "name", "producer", "unit", "weight", "radius", "length", "width", "depth", "size", "type"];
 }
