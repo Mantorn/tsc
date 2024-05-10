@@ -52,7 +52,7 @@ class ItemsController extends Controller
         // Inne jednostki traktujemy jako sztuki. 
         // 1 paleta = 2 paczki
 
-        // echo $item->unit . " " . $item->type . "<br>";
+        // echo $item->name . " " . $item->unit . " " . $item->type . "<br>";
         
         $result = [
             "rolka" => 0,
@@ -109,7 +109,7 @@ class ItemsController extends Controller
             }
         }
 
-        // dd($result);
+        // dd($result, $orders);
 
         return view('items.result', compact('item', 'result'));
     }
